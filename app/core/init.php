@@ -11,6 +11,7 @@ spl_autoload_register(function($class)
 });
 
 $site = new site();
+$blog = new blog();
 
 
 ?>

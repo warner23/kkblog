@@ -8,6 +8,8 @@
 
 class Db extends PDO
 {
+	private static $_instance;
+	
 	public function __construct($DB_TYPE, $DB_HOST, $DB_NAME, $DB_USER, $DB_PASS)
     {
         try {
@@ -21,7 +23,7 @@ class Db extends PDO
         }
     }
 
-    // this function creates an instance of  WIdb
+    // this function creates an instance of  db
     public static function getInstance() {
         // create instance if doesn't exist
         if ( self::$_instance === null )
@@ -48,6 +50,28 @@ class Db extends PDO
 	  $stmt->execute();
 	  return $stmt;
 	}
+
+
+	    public function select($sql, $array = array(), $fetchMode = PDO::FETCH_ASSOC)
+    {
+    	$this->WIdb = self::getInstance();
+
+        $smt = $this->WIdb->prepare($sql);
+        foreach ($array as $key => &$value) {
+            //echo ":$key", $value;
+            $smt->bindParam(":$key", $value, PDO::PARAM_STR);
+        }
+
+        
+        $smt->execute();
+
+        $result = $smt->fetchAll($fetchMode);
+
+        //$result->closeCursor();
+
+        return $result;
+
+    }
 
 	function selectAll($table,$conditions=[])
 	{

@@ -3,6 +3,37 @@
 class blog
 {
 
+
+     function __construct() 
+     {
+        //connect to database
+        $this->db = Db::getInstance();
+    }
+
+  function BlogPosts()
+  {
+    $results = $this->db->select("SELECT * FROM `posts`");
+
+    foreach ($results as $key => $post){
+        echo '<div class="post clearfix">
+          <img src="'.BASE_URL . '/images/' . $post['image'].'" class="post-image" alt="">
+          <div class="post-content">
+            <h2 class="post-title"><a href="single.php?id='.$post['id'].'">'.$post['title'].'</a></h2>
+            <div class="post-info">
+              <i class="fa fa-user-o">'.$post['username'].'</i>
+              &nbsp;
+              <i class="fa fa-calendar">'.date('F j. Y',strtotime($post['created_at'])).'</i>
+            </div>
+            <p class="post-body">'. html_entity_decode(substr($post['body'], 0, 150) . '...').'
+            </p>
+            <a href="single.php?id='.$post['id'].'" class="read-more">Read More</a>
+          </div>
+        </div>';
+      }
+
+  }
+
+
 	function getPublishedPosts()
 {
   global $conn;

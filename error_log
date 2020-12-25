@@ -92,3 +92,95 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/warner23/public_html/WIBacksites/kkblog/index.php on line 11
+[25-Dec-2020 18:27:18 UTC] PHP Warning:  include_once(/home/warner23/public_html/WIBacksites/kkblog/app/admin/core/dbLib.php): failed to open stream: No such file or directory in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Config.php on line 3
+[25-Dec-2020 18:27:18 UTC] PHP Warning:  include_once(): Failed opening '/home/warner23/public_html/WIBacksites/kkblog/app/admin/core/dbLib.php' for inclusion (include_path='.:/opt/alt/php71/usr/share/pear') in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Config.php on line 3
+[25-Dec-2020 18:27:18 UTC] PHP Notice:  Undefined variable: script in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Config.php on line 8
+[25-Dec-2020 18:27:18 UTC] PHP Notice:  Undefined variable: domain in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Config.php on line 10
+[25-Dec-2020 18:27:18 UTC] PHP Notice:  Undefined variable: dbhost in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Config.php on line 13
+[25-Dec-2020 18:27:18 UTC] PHP Notice:  Undefined variable: dbtype in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Config.php on line 15
+[25-Dec-2020 18:27:18 UTC] PHP Notice:  Undefined variable: dbusername in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Config.php on line 17
+[25-Dec-2020 18:27:18 UTC] PHP Notice:  Undefined variable: dbpass in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Config.php on line 19
+[25-Dec-2020 18:27:18 UTC] PHP Notice:  Undefined variable: dbname in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Config.php on line 21
+[25-Dec-2020 18:27:18 UTC] PHP Notice:  Undefined variable: contact_email in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Config.php on line 24
+[25-Dec-2020 18:27:18 UTC] PHP Notice:  Undefined variable: session in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Config.php on line 28
+[25-Dec-2020 18:27:18 UTC] PHP Notice:  Undefined variable: http in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Config.php on line 30
+[25-Dec-2020 18:27:18 UTC] PHP Notice:  Undefined variable: regenerate in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Config.php on line 32
+[25-Dec-2020 18:27:18 UTC] PHP Notice:  Undefined variable: cookie in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Config.php on line 34
+[25-Dec-2020 18:27:18 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF), expecting function (T_FUNCTION) or const (T_CONST) in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/User.php on line 34
+[25-Dec-2020 18:28:24 UTC] PHP Warning:  require_once(WIClass/Settings.php): failed to open stream: No such file or directory in /home/warner23/public_html/WIBacksites/kkblog/admin/core/dbLib.php on line 3
+[25-Dec-2020 18:28:24 UTC] PHP Fatal error:  require_once(): Failed opening required 'WIClass/Settings.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/warner23/public_html/WIBacksites/kkblog/admin/core/dbLib.php on line 3
+[25-Dec-2020 18:29:33 UTC] PHP Fatal error:  Uncaught Error: Class 'WILib' not found in /home/warner23/public_html/WIBacksites/kkblog/admin/core/dbLib.php:9
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Config.php(3): include_once()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php(3): include_once('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#4 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#5 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/admin/core/dbLib.php on line 9
+[25-Dec-2020 18:30:12 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF), expecting function (T_FUNCTION) or const (T_CONST) in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/User.php on line 34
+[25-Dec-2020 18:35:43 UTC] PHP Notice:  Undefined variable: postsTitle in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 37
+[25-Dec-2020 18:35:43 UTC] PHP Notice:  Undefined variable: posts in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 39
+[25-Dec-2020 18:35:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 39
+[25-Dec-2020 18:35:43 UTC] PHP Notice:  Undefined variable: topics in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 73
+[25-Dec-2020 18:35:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 73
+[25-Dec-2020 18:35:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method site::footer() in /home/warner23/public_html/WIBacksites/kkblog/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/index.php on line 11
+[25-Dec-2020 18:52:23 UTC] PHP Notice:  Undefined variable: postsTitle in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 37
+[25-Dec-2020 18:52:23 UTC] PHP Notice:  Undefined variable: posts in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 39
+[25-Dec-2020 18:52:23 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 39
+[25-Dec-2020 18:52:23 UTC] PHP Notice:  Undefined variable: topics in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 73
+[25-Dec-2020 18:52:23 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 73
+[25-Dec-2020 18:52:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method site::footer() in /home/warner23/public_html/WIBacksites/kkblog/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/index.php on line 11
+[25-Dec-2020 19:11:00 UTC] PHP Parse error:  syntax error, unexpected '$', expecting variable (T_VARIABLE) in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/blog.php on line 7
+[25-Dec-2020 19:11:51 UTC] PHP Fatal error:  Uncaught Error: Access to undeclared static property: Db::$_instance in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Db.php:27
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/blog.php(9): Db::getInstance()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(14): blog->__construct()
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Db.php on line 27
+[25-Dec-2020 19:13:49 UTC] PHP Fatal error:  Uncaught Error: Access to undeclared static property: Db::$_instance in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Db.php:27
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/blog.php(9): Db::getInstance()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(14): blog->__construct()
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Db.php on line 27
+[25-Dec-2020 19:16:09 UTC] PHP Fatal error:  Uncaught Error: Access to undeclared static property: Db::$_instance in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Db.php:27
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/blog.php(9): Db::getInstance()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(14): blog->__construct()
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Db.php on line 27
+[25-Dec-2020 19:16:24 UTC] PHP Fatal error:  Uncaught Error: Class 'WIdb' not found in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php:8
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#3 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php on line 8
+[25-Dec-2020 19:16:59 UTC] PHP Fatal error:  Uncaught Error: Class 'Db' not found in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php:8
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#3 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php on line 8
+[25-Dec-2020 19:18:01 UTC] PHP Fatal error:  Uncaught Error: Access to undeclared static property: Db::$_instance in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Db.php:27
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php(9): Db::getInstance()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Db.php on line 27

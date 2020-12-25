@@ -1,7 +1,5 @@
   <!-- Page wrapper -->
   
-  
-
 <div class="slideshow-container">
 
 <div class="mySlides fade">
@@ -34,27 +32,9 @@
     <!-- content -->
     <div class="content clearfix">
       <div class="page-content">
-        <h1 class="recent-posts-title"><?php echo $postsTitle; ?></h1>
+        <h1 class="recent-posts-title">Recent Posts</h1>
+        <?php $blog->BlogPosts(); ?>
 
-       <?php foreach ($posts as $key => $post): ?>
-        <div class="post clearfix">
-          <img src="<?php echo BASE_URL . '/images/' . $post['image']; ?>" class="post-image" alt="">
-          <div class="post-content">
-            <h2 class="post-title"><a href="single.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a></h2>
-            <div class="post-info">
-              <i class="fa fa-user-o"><?php echo $post['username']; ?></i>
-              &nbsp;
-              <i class="fa fa-calendar"><?php echo date('F j. Y',strtotime($post['created_at'])); ?></i>
-            </div>
-            <p class="post-body"><?php echo html_entity_decode(substr($post['body'], 0, 150) . '...'); ?>
-            </p>
-            <a href="single.php?id=<?php echo $post['id']; ?>" class="read-more">Read More</a>
-          </div>
-        </div>
-      
-       <?php endforeach; ?>
-        
-        
       </div>
       <div class="sidebar">
         <!-- Search -->
