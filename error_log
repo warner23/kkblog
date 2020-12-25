@@ -1,0 +1,94 @@
+[25-Dec-2020 17:58:14 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 48
+[25-Dec-2020 18:00:10 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ';' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 52
+[25-Dec-2020 18:01:01 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ';' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 60
+[25-Dec-2020 18:02:31 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 28
+[25-Dec-2020 18:02:31 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 35
+[25-Dec-2020 18:02:31 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 56
+[25-Dec-2020 18:02:31 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 57
+[25-Dec-2020 18:02:31 UTC] PHP Notice:  Undefined variable: postsTitle in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 37
+[25-Dec-2020 18:02:31 UTC] PHP Notice:  Undefined variable: posts in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 39
+[25-Dec-2020 18:02:31 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 39
+[25-Dec-2020 18:02:31 UTC] PHP Notice:  Undefined variable: topics in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 73
+[25-Dec-2020 18:02:31 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 73
+[25-Dec-2020 18:02:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method site::footer() in /home/warner23/public_html/WIBacksites/kkblog/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/index.php on line 11
+[25-Dec-2020 18:14:34 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 28
+[25-Dec-2020 18:14:34 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 35
+[25-Dec-2020 18:14:34 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 56
+[25-Dec-2020 18:14:34 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 57
+[25-Dec-2020 18:14:34 UTC] PHP Notice:  Undefined variable: postsTitle in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 37
+[25-Dec-2020 18:14:34 UTC] PHP Notice:  Undefined variable: posts in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 39
+[25-Dec-2020 18:14:34 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 39
+[25-Dec-2020 18:14:34 UTC] PHP Notice:  Undefined variable: topics in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 73
+[25-Dec-2020 18:14:34 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 73
+[25-Dec-2020 18:14:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method site::footer() in /home/warner23/public_html/WIBacksites/kkblog/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/index.php on line 11
+[25-Dec-2020 18:19:38 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 28
+[25-Dec-2020 18:19:38 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 35
+[25-Dec-2020 18:19:38 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 56
+[25-Dec-2020 18:19:38 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 57
+[25-Dec-2020 18:19:38 UTC] PHP Notice:  Undefined variable: postsTitle in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 37
+[25-Dec-2020 18:19:38 UTC] PHP Notice:  Undefined variable: posts in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 39
+[25-Dec-2020 18:19:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 39
+[25-Dec-2020 18:19:38 UTC] PHP Notice:  Undefined variable: topics in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 73
+[25-Dec-2020 18:19:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 73
+[25-Dec-2020 18:19:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method site::footer() in /home/warner23/public_html/WIBacksites/kkblog/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/index.php on line 11
+[25-Dec-2020 18:20:11 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 28
+[25-Dec-2020 18:20:11 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 35
+[25-Dec-2020 18:20:11 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 56
+[25-Dec-2020 18:20:11 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 57
+[25-Dec-2020 18:20:11 UTC] PHP Notice:  Undefined variable: postsTitle in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 37
+[25-Dec-2020 18:20:11 UTC] PHP Notice:  Undefined variable: posts in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 39
+[25-Dec-2020 18:20:11 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 39
+[25-Dec-2020 18:20:11 UTC] PHP Notice:  Undefined variable: topics in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 73
+[25-Dec-2020 18:20:11 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 73
+[25-Dec-2020 18:20:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method site::footer() in /home/warner23/public_html/WIBacksites/kkblog/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/index.php on line 11
+[25-Dec-2020 18:21:20 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 28
+[25-Dec-2020 18:21:20 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 35
+[25-Dec-2020 18:21:20 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 56
+[25-Dec-2020 18:21:20 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 57
+[25-Dec-2020 18:21:20 UTC] PHP Notice:  Undefined variable: postsTitle in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 37
+[25-Dec-2020 18:21:20 UTC] PHP Notice:  Undefined variable: posts in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 39
+[25-Dec-2020 18:21:20 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 39
+[25-Dec-2020 18:21:20 UTC] PHP Notice:  Undefined variable: topics in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 73
+[25-Dec-2020 18:21:20 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 73
+[25-Dec-2020 18:21:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method site::footer() in /home/warner23/public_html/WIBacksites/kkblog/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/index.php on line 11
+[25-Dec-2020 18:21:27 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 28
+[25-Dec-2020 18:21:27 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 35
+[25-Dec-2020 18:21:27 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 56
+[25-Dec-2020 18:21:27 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 57
+[25-Dec-2020 18:21:27 UTC] PHP Notice:  Undefined variable: postsTitle in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 37
+[25-Dec-2020 18:21:27 UTC] PHP Notice:  Undefined variable: posts in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 39
+[25-Dec-2020 18:21:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 39
+[25-Dec-2020 18:21:27 UTC] PHP Notice:  Undefined variable: topics in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 73
+[25-Dec-2020 18:21:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 73
+[25-Dec-2020 18:21:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method site::footer() in /home/warner23/public_html/WIBacksites/kkblog/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/index.php on line 11
+[25-Dec-2020 18:23:15 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 28
+[25-Dec-2020 18:23:15 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 35
+[25-Dec-2020 18:23:15 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 56
+[25-Dec-2020 18:23:15 UTC] PHP Notice:  Use of undefined constant BASE_URL - assumed 'BASE_URL' in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 57
+[25-Dec-2020 18:23:15 UTC] PHP Notice:  Undefined variable: postsTitle in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 37
+[25-Dec-2020 18:23:15 UTC] PHP Notice:  Undefined variable: posts in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 39
+[25-Dec-2020 18:23:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 39
+[25-Dec-2020 18:23:15 UTC] PHP Notice:  Undefined variable: topics in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 73
+[25-Dec-2020 18:23:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/index.php on line 73
+[25-Dec-2020 18:23:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method site::footer() in /home/warner23/public_html/WIBacksites/kkblog/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/index.php on line 11
