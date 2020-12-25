@@ -1,7 +1,7 @@
 <?php
 
 
-class validate
+class valid
 {
 
 	function validateUser($user)

@@ -12,6 +12,7 @@ spl_autoload_register(function($class)
 
 $site = new site();
 $blog = new blog();
+$topics = new topics();
 
 
 ?>

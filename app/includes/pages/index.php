@@ -50,11 +50,7 @@
           <h2>Topics</h2>
           <ul>
            
-           <?php foreach ($topics as $key => $topic): ?>
-              
-              <li><a href="<?php echo BASE_URL . '/index.php?t_id=' . $topic['id'] . '&name=' . $topic['name'] ?>"><?php echo $topic['name']; ?></a></li>
-            
-           <?php endforeach; ?>
+           <?php  $topics->blogTopics(); ?>
 
             
           </ul>

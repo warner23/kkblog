@@ -20,7 +20,7 @@ class blog
           <div class="post-content">
             <h2 class="post-title"><a href="single.php?id='.$post['id'].'">'.$post['title'].'</a></h2>
             <div class="post-info">
-              <i class="fa fa-user-o">'.$post['username'].'</i>
+              <i class="fa fa-user-o">'.self::postUsername($post['user_id']).'</i>
               &nbsp;
               <i class="fa fa-calendar">'.date('F j. Y',strtotime($post['created_at'])).'</i>
             </div>
@@ -31,6 +31,22 @@ class blog
         </div>';
       }
 
+  }
+
+   function postUsername($id)
+  {
+    //echo $id;
+    $results = $this->db->select("SELECT * FROM `users` WHERE `id`=:id", array("id" => $id));
+    //var_dump($results);
+    $resCount = count($results);
+    if($resCount > 0){
+      $username = $results[0]['username'];
+      return $username;
+
+    }else{
+      return "Unknown";
+    }
+    
   }
 
 
