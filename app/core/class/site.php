@@ -2,24 +2,66 @@
 
 class site
 {
-	
+
+	    function __construct() 
+    {
+      //db instance
+       $this->db = Db::getInstance();
+    }
 	public function startUp()
 	{
 		echo '<!DOCTYPE html>
 				<html lang="en">
 
 				<head>
+        <title>' . name . ' </title>
 				  <meta charset="UTF-8">
-				  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-				  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-				  
-				  <!-- Custom Styles -->
-				  <link rel="stylesheet" href="css/style.css">
-				  <link rel="stylesheet" href="css/carousal.css">
-				  <title>Inspires Blog</title>
-				</head>
-				<body>';
+				  <meta http-equiv="X-UA-Compatible" content="ie=edge">';
 	}
+
+  public function meta($page)
+  {
+          $result = $this->db->select("SELECT * FROM `meta` WHERE `page`=:page",
+          array(
+            "page" => $page
+          )
+        );
+
+         foreach($result as $res)
+        {
+            echo '<meta name="' . $res['name'] . '" content="' . $res['content'] . '">';
+            
+        }
+  }
+
+  public function css($page)
+  {
+      $result = $this->db->select("SELECT * FROM `css` WHERE `page`=:page",
+          array(
+            "page" => $page
+          )
+        );
+
+        foreach($result as $res)
+        {
+        echo '<link href="' . $res['href'] . '" rel="stylesheet">';
+        }
+  }
+
+  public function scripts($page)
+  {
+      $result = $this->db->select("SELECT * FROM `scripts` WHERE `page`=:page",
+          array(
+            "page" => $page
+          )
+        );
+
+        foreach($result as $res)
+        {
+        echo ' <script src="' . $res['src'] . '" type="text/javascript"></script>';
+        }
+
+  }
 
 	public function header()
 	{

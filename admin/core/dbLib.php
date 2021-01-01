@@ -21,6 +21,7 @@ $dbtype          = $config->Website_Info("db_type");
 $webName               = $config->Website_Info("name");
 $domain                = $config->Website_Info("base_url");
 $script                = $config->Website_Info("root_path");
+$redirect              = $config->Website_Info("redirect");
 $contact_email         = $config->Website_Info("contact_email");
 
 //session variables

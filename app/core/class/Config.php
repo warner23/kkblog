@@ -9,6 +9,9 @@ define ('ROOT_PATH', $script );
 
 define('BASE_URL', $domain);
 
+define('redirect', $redirect);
+
+define('name', $webName);
 //db settings
 define("DB_HOST", $dbhost); 
 
@@ -32,6 +35,8 @@ define("SESSION_HTTP_ONLY", $http);
 define("SESSION_REGENERATE_ID", $regenerate);   
 
 define("SESSION_USE_ONLY_COOKIES", $cookie);
+
+
 
 
 ?>

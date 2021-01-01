@@ -16,7 +16,7 @@ class blog
 
     foreach ($results as $key => $post){
         echo '<div class="post clearfix">
-          <img src="'.BASE_URL . '/images/' . $post['image'].'" class="post-image" alt="">
+          <img src="'.BASE_URL . '/resources/images/' . $post['image'].'" class="post-image" alt="">
           <div class="post-content">
             <h2 class="post-title"><a href="single.php?id='.$post['id'].'">'.$post['title'].'</a></h2>
             <div class="post-info">
