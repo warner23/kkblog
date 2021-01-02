@@ -20,9 +20,9 @@ class Register
      */
     function __construct() 
     {
-         $this->WIdb = WIdb::getInstance();
+         $this->db = Db::getInstance();
         //create new object of WIEmail class
-        $this->mailer = new WIEmail();
+        $this->mailer = new Email();
 
         //$this->maint = new WIMaintenace();
     }
@@ -44,34 +44,27 @@ class Register
           
             MAIL_CONFIRMATION_REQUIRED === true ? $confirmed = 'N' : $confirmed = 'Y';
 
-           $this->WIdb->insert('wi_members', array(
+           $this->db->insert('users', array(
             "email"     => $user['email'],
             "username"  => strip_tags($user['username']),
             "password"  => $this->hashPassword($user['password']),
             "confirmed" => $confirmed,
             "confirmation_key" => $key,
-            "register_date" => date("Y-m-d"),
-            "ip_addr" => getenv('REMOTE_ADDR')
-        )); 
+            "created_at" => date("Y-m-d")        )); 
 
-            $userId = $this->WIdb->lastInsertId();
+            $userId = $this->db->lastInsertId();
 
-            $st1  = $user['username'] ;
-            $st2  = "Added new user";
-            //$maintain = new WIMaintenace();
-            $this->maint->LogFunction($st1, $st2);
-
-            $this->WIdb->insert('wi_user_details', array( 'user_id' => $userId ));
+           // $this->WIdb->insert('wi_user_details', array( 'user_id' => $userId ));
            // echo "mail" . MAIL_CONFIRMATION_REQUIRED;
             //send confirmation email if needed
             if ( MAIL_CONFIRMATION_REQUIRED === "true" ) {
                 $this->mailer->confirmationEmail($user['email'], $key);
-                $msg = WILang::get('success_registration_with_confirm');
+                $msg = 'You have successfully regitered. Pls check your emails';
 
                // echo  WILang::get('success_registration_with_confirm');
             }
             else
-                $msg = WILang::get('success_registration_no_confirm');
+                $msg = 'You have successfully regitered.';
             
             //prepare and output success message
             $result = array(
@@ -103,7 +96,7 @@ class Register
      * @return mixed User info if user with provided email exist, empty array otherwise.
      */
     public function getByEmail($email) {
-        $result = $this->WIdb->select("SELECT * FROM `wi_members` WHERE `email` = :e", array( 'e' => $email ));
+        $result = $this->db->select("SELECT * FROM `Users` WHERE `email` = :e", array( 'e' => $email ));
         if ( count ( $result ) > 0 )
             return $result[0];
         return $result;
@@ -117,7 +110,7 @@ class Register
      * @return array|mixed User info if user has already logged in via specific provider, empty array otherwise.
      */
     public function getBySocial($provider, $id) {
-        $result = $this->WIdb->select('SELECT * FROM `wi_social_logins` WHERE `provider` = :p AND `provider_id` = :id ', array(
+        $result = $this->db->select('SELECT * FROM `wi_social_logins` WHERE `provider` = :p AND `provider_id` = :id ', array(
             'p'  => $provider,
             'id' => $id
         ));
@@ -154,7 +147,7 @@ class Register
      * @param $providerId Identifier provided by provider.
      */
     public function addSocialAccount($userId, $provider, $providerId) {
-        $this->WIdb->insert('wi_social_logins', array(
+        $this->db->insert('wi_social_logins', array(
             'user_id' => $userId,
             'provider' => $provider,
             'provider_id' => $providerId,
@@ -279,23 +272,24 @@ class Register
      */
     public function validateUser($data, $botProtection = true)
     {
+        //var_dump($data);
         $id     = $data['FieldId'];
         $user   = $data['UserData'];
         $errors = array();
-        $validator = new WIValidator();
+        $validator = new Validator();
         
         //check if email is not empty
         if( $validator->isEmpty($user['email']) )
             $errors[] = array( 
                 "id"    => $id['email'],
-                "msg"   => WILang::get('email_required') 
+                "msg"   => 'email_required'
             );
         
         //check if username is not empty
         if( $validator->isEmpty($user['username']) )
             $errors[] = array( 
                 "id"    => $id['username'],
-                "msg"   => WILang::get('username_required')
+                "msg"   => 'username_required'
             );
 
         
@@ -303,57 +297,39 @@ class Register
         if( $validator->isEmpty($user['password']) )
             $errors[] = array( 
                 "id"    => $id['password'],
-                "msg"   => WILang::get('password_required')
+                "msg"   => 'password_required'
             );
         
         //check if password and confirm password are the same
         if($user['password'] != $user['confirm_password'])
             $errors[] = array( 
                 "id"    => $id['confirm_password'],
-                "msg"   => WILang::get('passwords_dont_match')
+                "msg"   => 'passwords_dont_match'
             );
         
         //check if email format is correct
         if( ! $validator->emailValid($user['email']) )
             $errors[] = array( 
                 "id"    => $id['email'],
-                "msg"   => WILang::get('email_wrong_format')
+                "msg"   => 'email_wrong_format'
             );
         
         //check if email is available
         if( $validator->emailExist($user['email']) )
             $errors[] = array( 
                 "id"    => $id['email'],
-                "msg"   => WILang::get('email_taken')
+                "msg"   => 'email_taken'
             );
         
         //check if username is available
         if( $validator->usernameExist($user['username']) )
             $errors[] = array( 
                 "id"    => $id['username'],
-                "msg"   => WILang::get('username_taken')
+                "msg"   => 'username_taken'
             );
 
 
-        if ( $botProtection )
-        {
-            //bot protection
-            $bot_one = WISession::get('bot_first_number');
-            $bot_two = WISession::get('bot_second_number');
-
-            $sum = $bot_one + $bot_two;
-          // $sum1 = WISession::get('bot_first_number') + WISession::get('bot_second_number');
-// echo "total1" . $bot_one;
-// echo " total1" . $bot_two;
-//           // echo " total1" . $sum1;
-//            echo " total" . $sum;
-//            echo " my total" . $user['bot_sum'];
-            if($sum != intval($user['bot_sum']))
-                $errors[] = array( 
-                    "id"    => $id['bot_sum'],
-                    "msg"   => WILang::get('wrong_sum')
-                );
-        }        
+      
         
         return $errors;
     }

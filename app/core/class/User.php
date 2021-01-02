@@ -13,7 +13,7 @@ class User
     /**
      * @var Instance of WIDatabase class
      */
-    private $WIdb = null;
+    private $db = null;
 
     /**
      * Class constructor
@@ -24,7 +24,7 @@ class User
         $this->userId = $userId;
 
         //connect to database
-        $this->WIdb = WIdb::getInstance();
+        $this->db = Db::getInstance();
     }
 
     /**
@@ -37,7 +37,7 @@ class User
                     WHERE `users`.`user_id` = :id
                     AND `users`.`user_id` = `user_details`.`user_id`";
 
-        $result = $this->WIdb->select($query, array( 'id' => $this->userId ));
+        $result = $this->db->select($query, array( 'id' => $this->userId ));
 
         if ( count ( $result ) > 0 )
             return $result[0];
@@ -49,7 +49,7 @@ class User
     {
         $role = new WIRole();
         $adminRoleId = $role->getId('admin');
-        $result = $WIdb->select('SELECT * FROM `users` WHERE `user_role` = :role_id', array('role_id' => $adminRoleId) );
+        $result = $db->select('SELECT * FROM `users` WHERE `user_role` = :role_id', array('role_id' => $adminRoleId) );
 
         if ( count ( $result ) > 0 )
             return $result[0];
@@ -80,7 +80,7 @@ class User
             $data = $postData['userData'];
 
             // insert user login info
-            $this->WIdb->insert('users',  array (
+            $this->db->insert('users',  array (
                 'email'         => $data['email'],
                 'username'      => $data['username'],
                 'password'      => $reg->hashPassword($data['password']),
@@ -89,10 +89,10 @@ class User
             ));
 
             // get user id
-            $id = $this->WIdb->lastInsertId();
+            $id = $this->db->lastInsertId();
 
             // insert users details
-            $this->WIdb->insert('wi_user_details', array (
+            $this->db->insert('wi_user_details', array (
                 'user_id'    => $id,
                 'first_name' => $data['first_name'],
                 'last_name'  => $data['last_name'],
@@ -230,7 +230,7 @@ class User
     public function changeRole() {
         $role = $_POST['role'];
 
-        $result = $this->WIdb->select("SELECT * FROM `Wwi_user_roles` WHERE `role_id` = :r", array( "r" => $role ));
+        $result = $this->db->select("SELECT * FROM `Wwi_user_roles` WHERE `role_id` = :r", array( "r" => $role ));
 
         if(count($result) == 0)
             return;
@@ -245,7 +245,7 @@ class User
      * @return string Current user's role.
      */
     public function getRole() {
-        $result = $this->WIdb->select(
+        $result = $this->db->select(
                       "SELECT `wi_user_roles`.`role` as role 
                        FROM `wi_user_roles`,`wi_members`
                        WHERE `wi_members`.`user_role` = `wi_user_roles`.`role_id`
@@ -262,8 +262,8 @@ class User
      * @return array User info array.
      */
     public function getInfo() {
-        $result = $this->WIdb->select(
-                    "SELECT * FROM `wi_members` WHERE `user_id` = :id",
+        $result = $this->db->select(
+                    "SELECT * FROM `users` WHERE `id` = :id",
                     array ("id" => $this->userId)
                   );
         if ( count($result) > 0 )
@@ -279,7 +279,7 @@ class User
      * to be updated and values are new values for provided database fields.
      */
     public function updateInfo($updateData) {
-        $this->WIdb->update(
+        $this->db->update(
                     "wi_members", 
                     $updateData, 
                     "`user_id` = :id",
@@ -293,7 +293,7 @@ class User
      * @return array User details array.
      */
     public function getDetails() {
-        $result = $this->WIdb->select(
+        $result = $this->db->select(
                     "SELECT * FROM `wi_user_details` WHERE `user_id` = :id",
                     array ("id" => $this->userId)
                   );
@@ -323,7 +323,7 @@ class User
             $this->WIdb->insert("wi_user_details", $details);
         }
         else
-            $this->WIdb->update (
+            $this->db->update (
                 "wi_user_details",
                 $details,
                 "`user_id` = :id",
@@ -336,10 +336,16 @@ class User
      * Delete user, all his comments and connected social accounts.
      */
     public function deleteUser() {
-        $this->WIdb->delete("wi_members", "user_id = :id", array( "id" => $this->userId ));
-        $this->WIdb->delete("wi_user_details","user_id = :id", array( "id" => $this->userId ));
-        $this->WIdb->delete("wi_comments","posted_by = :id", array( "id" => $this->userId ));
-        $this->WIdb->delete("wi_social_logins","user_id = :id", array( "id" => $this->userId ));
+        $this->db->delete("wi_members", "user_id = :id", array( "id" => $this->userId ));
+        $this->db->delete("wi_user_details","user_id = :id", array( "id" => $this->userId ));
+        $this->db->delete("wi_comments","posted_by = :id", array( "id" => $this->userId ));
+        $this->db->delete("wi_social_logins","user_id = :id", array( "id" => $this->userId ));
+    }
+
+    public function getUsername($id)
+    {
+        $result = $this->db->select("SELECT `username` FROM `users` WHERE id=:id", array("id" => $id));
+        return $result;
     }
 
 

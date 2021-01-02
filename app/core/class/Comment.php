@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * Comments class.
  */
@@ -9,7 +7,6 @@ class Comment
     /**
      * @var 
      */
-    private $db = null;
 
     /**
      * @var ASUser
@@ -21,10 +18,11 @@ class Comment
      * @param ASDatabase $db
      * @param ASUser $users
      */
-    public function __construct(ASDatabase $db, ASUser $users)
+    public function __construct()
     {
-       $this->WIdb = WIdb::getInstance();
-      $this->users = new WIUser(WISession::get('user_id'));
+       $this->db   = Db::getInstance();
+       $this->users  = new User(Session::get('user_id'));
+
     }
 
     /**
@@ -32,7 +30,7 @@ class Comment
      * @param int $userId Id of user who is posting the comment.
      * @param string $comment Comment text.
      */
-    public function insertComment($userId, $comment)
+    public function insertComment( $userId, $id, $comment)
     {
         if ($error = $this->validateComment($comment)) {
             respond(array(
@@ -44,17 +42,19 @@ class Comment
         $datetime = date("Y-m-d H:i:s");
 
         $this->db->insert("comments", array(
+            "blog_id" => $id,
             "posted_by" => $userId,
             "posted_by_name" => $userInfo['username'],
             "comment" => strip_tags($comment),
-            "post_time" => $datetime
-        ));
-
-        respond(array(
-            "user" => $userInfo['username'],
-            "comment" => stripslashes(strip_tags($comment)),
             "postTime" => $datetime
         ));
+
+        $result = array(
+             "user" => $userInfo['username'],
+            "comment" => stripslashes(strip_tags($comment)),
+            "postTime" => $datetime   
+        );
+        echo json_encode($result);
     }
 
     /**
@@ -63,9 +63,10 @@ class Comment
      */
     private function validateComment($comment)
     {
-        return trim($comment) == ""
-            ? trans('field_required')
-            : null;
+        if(trim($comment) == ""){
+           return "Field Required";
+        }
+
     }
 
     /**
@@ -78,6 +79,14 @@ class Comment
         return $this->db->select(
             "SELECT * FROM `comments` WHERE `posted_by` = :id",
             array("id" => $userId)
+        );
+    }
+
+     public function getBlogComments($blogId)
+    {
+        return $this->db->select(
+            "SELECT * FROM `comments` WHERE `blog_id` = :id",
+            array("id" => $blogId)
         );
     }
 

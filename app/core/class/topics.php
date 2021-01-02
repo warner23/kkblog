@@ -1,6 +1,6 @@
 <?php
 
-class topics
+class Topics
 {
 	 function __construct() 
 	 {

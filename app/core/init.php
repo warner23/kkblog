@@ -10,9 +10,10 @@ spl_autoload_register(function($class)
 	require_once 'class/' . $class . '.php';
 });
 
-$site = new site();
-$blog = new blog();
-$topics = new topics();
+$user     = new User(Session::get("user_id"));
+$site     = new Site();
+$blog     = new Blog();
+$topics   = new Topics();
 
 
 ?>

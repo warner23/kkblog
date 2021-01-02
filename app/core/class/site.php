@@ -1,12 +1,14 @@
 <?php
 
-class site
+class Site
 {
 
 	    function __construct() 
     {
       //db instance
        $this->db = Db::getInstance();
+       $this->Login = new Login();
+       $this->User = new User(Session::get("user_id"));
     }
 	public function startUp()
 	{
@@ -73,32 +75,34 @@ class site
     </div>
     <div class="fa fa-reorder menu-toggle"></div>
     <nav>
-      <ul>
-        <li><a href="'.BASE_URL . '/index.php">Home</a></li>
+      <ul>';
+
+        echo '<li><a href="'.BASE_URL . '/index.php">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Services</a></li>';
          
-        if(isset($_SESSION['id'])):
-
-        '<li>
+         if($this->Login->isLoggedIn() ){
+          '<li>
           <a href="#" class="userinfo">
-            <i class="fa fa-user"> </i>
-            '.$_SESSION['username'].'
-            <i class="fa fa-chevron-down"></i>
+            <i class="fa fa-user"> </i>';
+            $this->User->getUsername(Session::get("user_id"));
+           echo '<i class="fa fa-chevron-down"></i>
           </a>
           <ul class="dropdown">';
-            if($_SESSION['admin']):
-
-            echo '<li><a href="'.BASE_URL . '/admin/dashboard.php">Dashboard</a></li>';
-            endif;
+        }else if($this->User->isAdmin() ){
+          echo '<li><a href="'.BASE_URL . '/admin/dashboard.php">Dashboard</a></li>';
+          
             echo '<li><a href="'. BASE_URL . '/logout.php" class="logout">Logout</a></li>
           </ul>
         </li>';
-    else:
-         echo '<li><a href="'. BASE_URL . '/register.php">Sign up</a></li>
+
+      }else{
+        echo '<li><a href="'. BASE_URL . '/register.php">Sign up</a></li>
          <li><a href="'. BASE_URL . '/login.php"><i class="fa fa-sign-in"></i>Login</a></li>';
-         
-     endif;
+      }
+        
+            
+
       echo '</ul>
     </nav>
   </header>';

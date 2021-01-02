@@ -2,12 +2,12 @@
 
 
 
-require_once dirname(dirname(__FILE__)) . '/resources/phpmailer/PHPMailerAutoload.php';
+require_once dirname(dirname(dirname(dirname(__FILE__))) ). '/resources/phpmailer/PHPMailerAutoload.php';
 
 /**
  * Class for sending emails.
  */
-class WIEmail {
+class Email {
     
     /**
      * Send confirmation email

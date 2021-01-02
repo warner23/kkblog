@@ -1,6 +1,6 @@
 <?php
-
-include_once 'app/core/init.php';
+//echo dirname(dirname(dirname(__FILE__))) .'/app/core/init.php';
+include_once dirname(dirname(dirname(__FILE__))) .'/app/core/init.php';
 
 $site->StartUp();
 $site->meta($page);

@@ -6,9 +6,9 @@
  	
 
     //button login click
-    $("#btn-login").click(function () {
-        var  un    = $("#login-username"),
-             pa    = $("#login-password");
+    $("#login-btn").click(function () {
+        var  un    = $("#username"),
+             pa    = $("#password");
 
        //validate login form
        if(login.validateLogin(un, pa) === true) { 
@@ -17,8 +17,8 @@
                 username: un.val(),
                 password: pa.val(),
                 id: {
-                    username: "login-username",
-                    password: "login-password"
+                    username: "username",
+                    password: "password"
                 }
             };
             
@@ -30,7 +30,7 @@
 
 
     //set focus on username field when page is loaded
-    $("#login-username").focus();
+    $("#username").focus();
 });
 
 
@@ -39,14 +39,14 @@
 var login = {};
 
 login.loginUser = function (data) {
-    var btn = $("#btn-login");
-    WICore.loadingButton(btn, $_lang.logging_in);
+    var btn = $("#login-btn");
+    core.loadingButton(btn, "Logging in...");
 
     //encrypt password before sending it through the network
     data.password = CryptoJS.SHA512(data.password).toString();
 
     $.ajax({
-        url: "WICore/WIClass/WIAjax.php",
+        url: "app/core/class/Ajax.php",
         type: "POST",
         dataType: "json",
         data: {
@@ -56,12 +56,12 @@ login.loginUser = function (data) {
             id      : data.id
         },
         success: function (result) {
-           WICore.removeLoadingButton(btn);
+           core.removeLoadingButton(btn);
            if( result.status === 'success' )
-               window.location.reload();
+               window.location = result.page;
            else {
-               WICore.displayErrorMessage($("#login-username"));
-               WICore.displayErrorMessage($("#login-password"), result.message);
+               core.displayErrorMessage($("#username"));
+               core.displayErrorMessage($("#password"), result.message);
            }
 
         }
@@ -72,14 +72,14 @@ login.validateLogin = function (un, pass) {
     var valid = true;
 
     //remove previous error messages
-    WICore.removeErrorMessages();
+    core.removeErrorMessages();
 
     if($.trim(un.val()) == "") {
-        WICore.displayErrorMessage(un);
+        core.displayErrorMessage(un);
         valid = false;
     }
     if($.trim(pass.val()) == "") {
-        WICore.displayErrorMessage(pass);
+        core.displayErrorMessage(pass);
         valid = false;
     }
 

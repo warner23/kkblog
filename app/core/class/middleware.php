@@ -1,6 +1,6 @@
 <?php
 
-class middleware
+class Middleware
 {
 	function usersOnly($redirect = '/index.php')
 {

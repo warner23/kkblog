@@ -13,4 +13,3 @@ $site->footer();
    ?>
 </body>
 </html>
- <script src="js/carousal.js"></script>

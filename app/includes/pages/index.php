@@ -61,3 +61,4 @@
     <!-- // content -->
   </div>
   <!-- // page wrapper -->
+  <script type="text/javascript" src="<?php echo BASE_URL ?>/resources/js/post.js"></script>

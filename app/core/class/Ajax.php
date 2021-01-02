@@ -21,7 +21,7 @@ switch ($action) {
             ));
 		break;
     case "registerUser":
-        $register->register($_POST['User']);
+        $register->register($_POST['user']);
         break;
         
     case "resetPassword":
@@ -36,7 +36,7 @@ switch ($action) {
         
     case "postComment":
         $Comment = new Comment();
-        echo $Comment->insertComment(session::get("user_id"), $_POST['comment']);
+        echo $Comment->insertComment(Session::get("user_id"), $_POST['id'] , $_POST['comment']);
         break;
         
     case "updatePassword":
@@ -70,6 +70,16 @@ switch ($action) {
 
         $user = new WIUser(null);
         echo json_encode( $user->add($_POST) );
+        break;
+
+    case "postId":
+        $blog = new Blog();
+        $blog->postId($_POST['id']);
+        break;
+
+    case "postload":
+        $blog = new Blog();
+        $blog->postload();
         break;
 
 

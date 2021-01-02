@@ -15,20 +15,19 @@ $(document).ready(function () {
 
             //create data that will be sent to server
             var data = { 
-                userData: {
+                UserData: {
                     email           : regMail,
                     username        : regUser,
                     password        : regPass,
                     confirm_password: regPassConf
                 },
-                fieldId: {
+                FieldId: {
                     email           : "email",
                     username        : "username",
                     password        : "password",
                     confirm_password: "passwordConf"
                 }
             };
-            
             //send data to server
             register.registerUser(data);
         }                        
@@ -55,12 +54,12 @@ register.registerUser = function (data) {
     core.loadingButton(btn, "Creating Account");
     
     //hash passwords before send them through network
-    data.userData.password = CryptoJS.SHA512(data.userData.password).toString();
-    data.userData.confirm_password = CryptoJS.SHA512(data.userData.confirm_password).toString();
+    data.UserData.password = CryptoJS.SHA512(data.UserData.password).toString();
+    data.UserData.confirm_password = CryptoJS.SHA512(data.UserData.confirm_password).toString();
     
     //send data to server
     $.ajax({
-        url: "core/class/Ajax.php",
+        url: "app/core/class/Ajax.php",
         type: "POST",
         data: {
             action  : "registerUser",
@@ -86,7 +85,7 @@ register.registerUser = function (data) {
             }
             else {
                 //display success message
-                core.displaySuccessMessage($(".form-horizontal register-form fieldset"), res.msg);
+                core.displaySuccessMessage($("#result"), res.msg);
              //  $( "#msg").html(+res.msg+)
 
             }
@@ -105,9 +104,9 @@ register.validateRegistration = function () {
     //remove previous error messages
     core.removeErrorMessages();
     
-    
+
     //check if all fields are filled
-    $(".register-form").find("input").each(function () {
+    $(".form-horizontal").find("input").each(function () {
         var el = $(this);
 
         if($.trim(el.val()) === "") {
@@ -120,11 +119,11 @@ register.validateRegistration = function () {
     var regMail     = $("#email"),
         regPass     = $("#password"),
         regPassConf = $("#passwordConf");
-    
+        
     //check if email is valid
     if(!core.validateEmail(regMail.val()) && regMail.val() != "") {
         valid = false;
-        core.displayErrorMessage(regMail,$_lang.email_wrong_format);
+        core.displayErrorMessage(regMail,"Email wrong format");
     }
 
     //check if password and confirm password fields are equal
@@ -138,6 +137,5 @@ register.validateRegistration = function () {
         valid = false;
         core.displayErrorMessage(regPass, "password too small");
     }
-
     return valid;
 };

@@ -184,3 +184,208 @@ Stack trace:
 #3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
 #4 {main}
   thrown in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/Db.php on line 27
+[27-Dec-2020 07:14:39 UTC] PHP Notice:  Undefined index: author in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 32
+[27-Dec-2020 07:14:39 UTC] PHP Notice:  Undefined index: rel in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 47
+[27-Dec-2020 07:14:39 UTC] PHP Notice:  Undefined index: rel in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 47
+[27-Dec-2020 07:14:39 UTC] PHP Notice:  Undefined property: site::$WIdb in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 53
+[27-Dec-2020 07:14:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function select() on null in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php:53
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(8): site->scripts('register')
+#1 /home/warner23/public_html/WIBacksites/kkblog/register.php(5): include_once('/home/warner23/...')
+#2 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 53
+[27-Dec-2020 07:16:03 UTC] PHP Notice:  Undefined property: site::$WIdb in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 53
+[27-Dec-2020 07:16:03 UTC] PHP Fatal error:  Uncaught Error: Call to a member function select() on null in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php:53
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(8): site->scripts('register')
+#1 /home/warner23/public_html/WIBacksites/kkblog/register.php(5): include_once('/home/warner23/...')
+#2 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 53
+[27-Dec-2020 07:16:29 UTC] PHP Notice:  Undefined property: site::$WIdb in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 53
+[27-Dec-2020 07:16:29 UTC] PHP Fatal error:  Uncaught Error: Call to a member function select() on null in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php:53
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(8): site->scripts('register')
+#1 /home/warner23/public_html/WIBacksites/kkblog/register.php(5): include_once('/home/warner23/...')
+#2 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 53
+[27-Dec-2020 07:17:51 UTC] PHP Notice:  Undefined variable: page in /home/warner23/public_html/WIBacksites/kkblog/app/core/class/site.php on line 55
+[29-Dec-2020 22:40:19 UTC] PHP Notice:  Undefined variable: post in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 5
+[29-Dec-2020 22:40:19 UTC] PHP Notice:  Undefined variable: post in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 7
+[29-Dec-2020 22:40:19 UTC] PHP Notice:  Undefined variable: posts in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 20
+[29-Dec-2020 22:40:19 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 20
+[29-Dec-2020 22:40:19 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type Db as array in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php:38
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/single.php(9): include_once()
+#1 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 38
+[29-Dec-2020 22:53:53 UTC] PHP Notice:  Undefined variable: post in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 5
+[29-Dec-2020 22:53:53 UTC] PHP Notice:  Undefined variable: post in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 7
+[29-Dec-2020 22:53:53 UTC] PHP Notice:  Undefined variable: posts in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 20
+[29-Dec-2020 22:53:53 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 20
+[29-Dec-2020 22:53:53 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type Db as array in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php:38
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/single.php(9): include_once()
+#1 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 38
+[29-Dec-2020 23:09:32 UTC] PHP Notice:  Undefined variable: post in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 5
+[29-Dec-2020 23:09:32 UTC] PHP Notice:  Undefined variable: post in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 7
+[29-Dec-2020 23:09:32 UTC] PHP Notice:  Undefined variable: posts in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 20
+[29-Dec-2020 23:09:32 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 20
+[29-Dec-2020 23:09:32 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type Db as array in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php:38
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/single.php(9): include_once()
+#1 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 38
+[31-Dec-2020 23:53:15 UTC] PHP Notice:  Undefined variable: post in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 5
+[31-Dec-2020 23:53:15 UTC] PHP Notice:  Undefined variable: post in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 7
+[31-Dec-2020 23:53:15 UTC] PHP Notice:  Undefined variable: posts in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 20
+[31-Dec-2020 23:53:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 20
+[31-Dec-2020 23:53:15 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type Db as array in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php:38
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/single.php(9): include_once()
+#1 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/app/includes/pages/single.php on line 38
+[01-Jan-2021 00:55:46 UTC] PHP Notice:  Undefined variable: site in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 00:55:46 UTC] PHP Fatal error:  Uncaught Error: Call to a member function header() on null in /home/warner23/public_html/WIBacksites/kkblog/register.php:7
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php(8): include_once()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:32:13 UTC] PHP Notice:  Undefined variable: site in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:32:13 UTC] PHP Fatal error:  Uncaught Error: Call to a member function header() on null in /home/warner23/public_html/WIBacksites/kkblog/register.php:7
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php(8): include_once()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:37:20 UTC] PHP Notice:  Undefined variable: site in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:37:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function header() on null in /home/warner23/public_html/WIBacksites/kkblog/register.php:7
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php(8): include_once()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:37:47 UTC] PHP Notice:  Undefined variable: site in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:37:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function header() on null in /home/warner23/public_html/WIBacksites/kkblog/register.php:7
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php(8): include_once()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:38:10 UTC] PHP Notice:  Undefined variable: site in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:38:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function header() on null in /home/warner23/public_html/WIBacksites/kkblog/register.php:7
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php(8): include_once()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:39:23 UTC] PHP Notice:  Undefined variable: site in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:39:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function header() on null in /home/warner23/public_html/WIBacksites/kkblog/register.php:7
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php(8): include_once()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:41:08 UTC] PHP Notice:  Undefined variable: site in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:41:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function header() on null in /home/warner23/public_html/WIBacksites/kkblog/register.php:7
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php(8): include_once()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:41:55 UTC] PHP Notice:  Undefined variable: site in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:41:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function header() on null in /home/warner23/public_html/WIBacksites/kkblog/register.php:7
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php(8): include_once()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:42:38 UTC] PHP Notice:  Undefined variable: site in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:42:38 UTC] PHP Fatal error:  Uncaught Error: Call to a member function header() on null in /home/warner23/public_html/WIBacksites/kkblog/register.php:7
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php(8): include_once()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:43:19 UTC] PHP Notice:  Undefined variable: site in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:43:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function header() on null in /home/warner23/public_html/WIBacksites/kkblog/register.php:7
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php(8): include_once()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:43:24 UTC] PHP Notice:  Undefined variable: site in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:43:24 UTC] PHP Fatal error:  Uncaught Error: Call to a member function header() on null in /home/warner23/public_html/WIBacksites/kkblog/register.php:7
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php(8): include_once()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:43:55 UTC] PHP Notice:  Undefined variable: site in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:43:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function header() on null in /home/warner23/public_html/WIBacksites/kkblog/register.php:7
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php(8): include_once()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:44:56 UTC] PHP Notice:  Undefined variable: site in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:44:56 UTC] PHP Fatal error:  Uncaught Error: Call to a member function header() on null in /home/warner23/public_html/WIBacksites/kkblog/register.php:7
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php(8): include_once()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:44:58 UTC] PHP Notice:  Undefined variable: site in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 02:44:58 UTC] PHP Fatal error:  Uncaught Error: Call to a member function header() on null in /home/warner23/public_html/WIBacksites/kkblog/register.php:7
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php(8): include_once()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 10:02:19 UTC] PHP Notice:  Undefined variable: site in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 10:02:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function header() on null in /home/warner23/public_html/WIBacksites/kkblog/register.php:7
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php(8): include_once()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 10:02:53 UTC] PHP Notice:  Undefined variable: site in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7
+[01-Jan-2021 10:02:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function header() on null in /home/warner23/public_html/WIBacksites/kkblog/register.php:7
+Stack trace:
+#0 /home/warner23/public_html/WIBacksites/kkblog/app/core/class/kkblog.php(8): include_once()
+#1 /home/warner23/public_html/WIBacksites/kkblog/app/core/init.php(6): require('/home/warner23/...')
+#2 /home/warner23/public_html/WIBacksites/kkblog/app/includes/start_up.php(3): include_once('/home/warner23/...')
+#3 /home/warner23/public_html/WIBacksites/kkblog/index.php(5): include_once('/home/warner23/...')
+#4 {main}
+  thrown in /home/warner23/public_html/WIBacksites/kkblog/register.php on line 7

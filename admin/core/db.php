@@ -10,14 +10,14 @@ $db_name="blog";
 */
 
 
-define("HOST", "mysql1006.mochahost.com"); 
+define("HOST", "localhost"); 
 
 define("TYPE", "mysql"); 
 
-define("USER", "warner23_kkblog"); 
+define("USER", "root"); 
 
-define("PASS", "t4yl0r22??"); 
+define("PASS", ""); 
 
-define("NAME", "warner23_kkblog"); 
+define("NAME", "blog"); 
 
 ?>
