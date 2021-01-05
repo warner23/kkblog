@@ -82,6 +82,16 @@ switch ($action) {
         $blog->postload();
         break;
 
+    case "thumbup":
+        $blog = new Blog();
+        $blog->thumbUp($_POST['id']);
+        break;
+
+    case "thumbdown":
+        $blog = new Blog();
+        $blog->thumbDown($_POST['id']);
+        break;
+
 
       default:
         

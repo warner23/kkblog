@@ -19,7 +19,7 @@ class Blog
         echo '<div class="post clearfix">
           <img src="'.BASE_URL . '/resources/images/' . $post['image'].'" class="post-image" alt="">
           <div class="post-content">
-            <h2 class="post-title"><a href="single.php?id='.$post['id'].'">'.$post['title'].'</a></h2>
+            <h2 class="post-title"><a href="javascript:void(0);" onclick="post.single('.$post['id'].')">'.$post['title'].'</a></h2>
             <div class="post-info">
               <i class="fa fa-user-o">'.self::postUsername($post['user_id']).'</i>
               &nbsp;
@@ -27,6 +27,31 @@ class Blog
             </div>
             <p class="post-body">'. html_entity_decode(substr($post['body'], 0, 150) . '...').'
             </p>
+
+            <div id="user_interact">
+            <ul>
+              <li onclick="post.thumbsUp(`'.$post['id'].'`);">
+              <span>';
+              $utustatus = self::likingChecker($post['id'], "thumbs_up");
+              if($utustatus == "true"){
+                echo '<img id="tus" src="'.BASE_URL . '/resources/images/tu_clicked.png" style="width:16px;height:16px;">';
+              }else{
+                echo '<img id="tus" src="'.BASE_URL . '/resources/images/tu_unclicked.png" style="width:16px;height:16px;">';
+              }
+              echo '</span>Thumbs Up</li>
+
+              <li onclick="post.thumbsDown(`'.$post['id'].'`);">
+              <span>';
+              $utdstatus = self::likingChecker($post['id'], "thumbs_down");
+              if($utdstatus == "true"){
+                echo '<img id="tds" src="'.BASE_URL . '/resources/images/td_clicked.png" style="width:16px;height:16px;">';
+              }else{
+                echo '<img id="tds" src="'.BASE_URL . '/resources/images/td_unclicked.png" style="width:16px;height:16px;">';
+              }
+              echo '</span>Thumbs Down</li>
+            </ul>
+            </div>
+
             <a href="javascript:void(0);" class="read-more" onclick="post.single('.$post['id'].')">Read More</a>
           </div>
         </div>';
@@ -89,6 +114,151 @@ class Blog
       echo json_encode($res);
     }
       
+  }
+
+  public function thumbUp($id)
+  {
+    $user_id = Session::get('user_id');
+    if($user_id == "null" || !$user_id  > "0"){
+      $res = array(
+          "status" => "failed",
+          "tdstatus"   => "login"
+        );
+      echo json_encode($res);
+    }else{
+    $tustatus = $this->db->select("SELECT * FROM `user_interact` WHERE `user_id`=:user_id AND `blog_id`=:blog_id", array("user_id" => $user_id, "blog_id" => $id));
+
+    $count = count($tustatus);
+    //echo $count;
+    if($count > 0){
+
+      $status = $tustatus[0]['thumbs_up'];
+      $cid    = $tustatus[0]['id'];
+      //echo $status;
+    if($status == "true"){
+      $s = "false";
+      $this->db->update(
+                    "user_interact", 
+                    array(
+                      "thumbs_up" => $s
+                    ), 
+                    "`id`=:id",
+                    array( "id" => $cid )
+               );
+
+      $res = array(
+          "status" => "success",
+          "tustatus"   => "false",
+          "src"   => BASE_URL . "/resources/images/tu_unclicked.png"
+        );
+      echo json_encode($res);
+
+    }else{
+       $s = "true";
+      $this->db->update(
+                    "user_interact", 
+                    array(
+                      "thumbs_up" => $s
+                    ), 
+                    "`id`=:id",
+                    array( "id" => $cid )
+               );
+
+      $res = array(
+          "status" => "success",
+          "tustatus"   => "true",
+          "src"   => BASE_URL . "/resources/images/tu_clicked.png"
+        );
+      echo json_encode($res);
+
+    }
+
+    }else{
+       $this->db->insert('user_interact', array(
+            "user_id"  => $user_id,
+            "blog_id"  => $id,
+            "thumbs_up" => "true"
+          )); 
+    }
+  }
+    
+
+  }
+
+  public function thumbDown($id)
+  {
+        $user_id = Session::get('user_id');
+
+    $tustatus = $this->db->select("SELECT * FROM `user_interact` WHERE `user_id`=:user_id AND `blog_id`=:blog_id", array("user_id" => $user_id, "blog_id" => $id));
+
+    $count = count($tustatus);
+
+    if($count > 0){
+
+    $status = $tustatus[0]['thumbs_down'];
+    $cid    = $tustatus[0]['id'];
+
+    if($status == "true"){
+      $this->db->update(
+                    "user_interact", 
+                    array(
+                      "thumbs_down" => "false")
+                    , 
+                    "`id` =:id",
+                    array( "id" => $cid )
+               );
+      $res = array(
+          "status" => "success",
+          "tdstatus"   => "false",
+          "src"   => BASE_URL . "/resources/images/td_unclicked.png"
+        );
+      echo json_encode($res);
+
+    }else{
+      $this->db->update(
+                    "user_interact", 
+                    array(
+                      "thumbs_down" => "true"
+                    ), 
+                    "`id` =:id",
+                    array( "id" => $cid )
+               );
+      $res = array(
+          "status" => "success",
+          "tdstatus"   => "true",
+          "src"   => BASE_URL . "/resources/images/td_clicked.png"
+        );
+      echo json_encode($res);
+
+    }
+  }else{
+     $this->db->insert('user_interact', array(
+            "user_id"     => $user_id,
+            "blog_id"  => $id,
+            "thumbs_down" => "true"
+          )); 
+  }
+
+  } 
+
+  public function likingChecker($id, $like)
+  {
+    $user_id = Session::get('user_id');
+
+    $tustatus = $this->db->select("SELECT * FROM `user_interact` WHERE `user_id`=:user_id AND `blog_id`=:blog_id", array("user_id" => $user_id, "blog_id" => $id));
+   
+   $count = count($tustatus);
+   if($count > 0){
+    $status = $tustatus[0][$like];
+   return $status;
+
+   }else{
+    $status = "false";
+    return $status;
+   }
+   
+
+
   }
 
    function postUsername($id)

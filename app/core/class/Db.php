@@ -35,9 +35,9 @@ class Db extends PDO
 
      public function select($sql, $array = array(), $fetchMode = PDO::FETCH_ASSOC)
     {
-        $this->WIdb = self::getInstance();
+        $this->db = self::getInstance();
 
-        $smt = $this->WIdb->prepare($sql);
+        $smt = $this->db->prepare($sql);
         //print_r($smt);
         foreach ($array as $key => &$value) {
             //echo ":$key", $value;
@@ -59,8 +59,8 @@ class Db extends PDO
 
     public function selectwithOptions($sql, $array = array(), $fetchMode = PDO::FETCH_ASSOC)
     {
-        $this->WIdb = self::getInstance();
-        $smt = $this->WIdb->prepare($sql);
+        $this->db = self::getInstance();
+        $smt = $this->db->prepare($sql);
         foreach ($array as $key => &$value) {
             //echo ":$key", $value;
             $smt->bindParam(':$key', $value, PDO::PARAM_STR);
@@ -81,9 +81,9 @@ class Db extends PDO
 
         public function Selected($sql, $array = array(), $fetchMode = PDO::FETCH_ASSOC, $while)
     {
-        $this->WIdb = self::getInstance();
+        $this->db = self::getInstance();
 
-        $smt = $this->WIdb->prepare($sql);
+        $smt = $this->db->prepare($sql);
         foreach ($array as $key => &$value) {
             //echo ":$key", $value;
             $smt->bindParam(":$key", $value, PDO::PARAM_STR);
@@ -102,9 +102,9 @@ class Db extends PDO
 
         public function selectColumn($sql, $array = array(), $column, $fetchMode = PDO::FETCH_ASSOC)
     {
-        $WIdb = self::getInstance();
+        $db = self::getInstance();
 
-        $sth = $WIdb->prepare($sql);
+        $sth = $db->prepare($sql);
         foreach ($array as $key => &$value) {
             $sth->bindParam(":$key", $value);
         }
@@ -122,9 +122,9 @@ class Db extends PDO
 
      public function blindFreeColumn($sql, $column, $fetchMode = PDO::FETCH_ASSOC)
     {
-        $WIdb = self::getInstance();
+        $db = self::getInstance();
 
-        $sth = $WIdb->prepare($sql);
+        $sth = $db->prepare($sql);
         $sth->execute();
 
         $result = $sth->fetch($fetchMode);
@@ -134,9 +134,9 @@ class Db extends PDO
 
         public function bindfree($query)
     {
-        $this->WIdb = self::getInstance();
+        $this->db = self::getInstance();
 
-        $smt = $this->WIdb->prepare($query);
+        $smt = $this->db->prepare($query);
         $smt->execute();
         $smt->closeCursor();
 
@@ -183,7 +183,7 @@ class Db extends PDO
 
     public function update($table, $data, $where, $whereBindArray = array())
     {
-        $this->WIdb = self::getInstance();
+        $this->db = self::getInstance();
 
         ksort($data);
         //var_dump($data);
@@ -194,10 +194,11 @@ class Db extends PDO
         }
         $fieldDetails = rtrim($fieldDetails, ',');
         //var_dump($fieldDetails);
-        $smt = $this->WIdb->prepare("UPDATE $table SET $fieldDetails WHERE $where");
+        $smt = $this->db->prepare("UPDATE $table SET $fieldDetails WHERE $where");
+        
         //var_dump($smt);
         foreach ($data as $key => &$value) {
-           // echo ":$key", $value;
+          //echo ":$key", $value;
             $smt->bindParam(":$key", $value, PDO::PARAM_STR);
             //var_dump($value);
         }
